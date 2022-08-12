@@ -1,26 +1,321 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family: 'Open Sans', sans-serif;
 }
 
-a {
-  color: inherit;
+.light-300{
+    font-weight:300 ;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+.light-400{
+
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+.light-600{
+    font-weight:600 ;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+.light-700{
+    font-weight:700 ;
+    /* font-size: 1.6rem; */
+    letter-spacing: 1px;
+    
+}
+
+
+/* overlay */
+.container {
+  position: relative;
+  width: 384px; 
+  height: 224px;
+}
+
+.video{
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+  
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+  
+  
+.container:hover .video {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: hsl(39, 95%, 34%);
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+   
+/* button contact */
+.box-3 { background-color: rgb(251 191 36);
+width: 40%;
+margin-bottom: 20px;
+border-radius: 10px;
+
+}
+.box-3:hover{
+  background-color:white;
+}
+.box-3:hover .btn-three{
+  color: black;
+}
+
+.bttn {
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.btn-three {
+  /* color: #FFF; */
+  color: black;
+  transition: all 0.5s;
+  position: relative;
+  
+}
+.btn-three::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(241, 146, 14, 0.1);
+  transition: all 0.3s;
+}
+.btn-three:hover::before {
+  opacity: 0 ;
+  transform: scale(0.5,0.5);
+}
+.btn-three::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 2px solid rgba(7, 7, 7, 0.5);
+  transform: scale(1.2,1.2);
+}
+.btn-three:hover::after {
+  opacity: 1;
+  transform: scale(1,1);
+}
+/* button contact */
+
+/* click me button */
+
+.hover-me{
+  display: block;
+  width: 30px;
+  height: 50px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
   text-decoration: none;
+  color: #fff;
+  border: 2px solid #fff;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
 }
 
-* {
-  box-sizing: border-box;
+.hover-me span{
+  position: relative;
+  z-index: 2;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.hover-me:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: rgb(251 191 36);
+  transition: all .35s;
+}
+
+.hover-me:hover{
+  color: #fff;
+}
+
+.hover-me:hover:after{
+  width: 100%;
+}
+/* click me button */
+
+
+
+/* thar */
+/* Thar Buttons */
+
+a.animated-button.thar-one {
+	color: #000;
+	cursor: pointer;
+  padding: 15px 0px 15px 0px;
+	display: block;
+	position: relative;
+  border-radius: 10px;
+	border: 2px solid #F7CA18;
+	transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+a.animated-button.thar-one:hover {
+	color: #000 !important;
+	background-color: transparent;
+	text-shadow: none;
+}
+a.animated-button.thar-one:hover:before {
+	bottom: 0%;
+	top: auto;
+	height: 100%;
+}
+a.animated-button.thar-one:before {
+	display: block;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 0px;
+	width: 100%;
+	z-index: -1;
+	content: '';
+	color: #000 !important;
+	background: #F7CA18;
+	transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+/* thar */
+a.animated-button.thar-two {
+	color: #000;
+  border-radius: 10px;
+  padding: 15px 0 ;
+	cursor: pointer;
+	display: block;
+	position: relative;
+	border: 2px solid #F7CA18;
+	transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+a.animated-button.thar-two:hover {
+	color: #000 !important;
+	background-color: transparent;
+	text-shadow: ntwo;
+}
+a.animated-button.thar-two:hover:before {
+	top: 0%;
+	bottom: auto;
+	height: 100%;
+}
+a.animated-button.thar-two:before {
+	display: block;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	height: 0px;
+	width: 100%;
+	z-index: -1;
+	content: '';
+	color: #000 !important;
+	background: #F7CA18;
+	transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+a.animated-button.thar-three {
+	color: #000;
+  padding: 15px 0;
+  border-radius: 10px;
+	cursor: pointer;
+	display: block;
+	position: relative;
+	border: 2px solid #F7CA18;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1)0s;
+}
+a.animated-button.thar-three:hover {
+	color: #000 !important;
+	background-color: transparent;
+	text-shadow: nthree;
+}
+a.animated-button.thar-three:hover:before {
+	left: 0%;
+	right: auto;
+	width: 100%;
+}
+a.animated-button.thar-three:before {
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 100%;
+	width: 0px;
+	z-index: -1;
+	content: '';
+	color: #000 !important;
+	background: #F7CA18;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1)0s;
+}
+a.animated-button.thar-four {
+	color: #000;
+  border-radius: 10px;
+  padding: 15px 0;
+	cursor: pointer;
+	display: block;
+	position: relative;
+	border: 2px solid #F7CA18;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1)0s;
+}
+a.animated-button.thar-four:hover {
+	color: #000 !important;
+	background-color: transparent;
+	text-shadow: nfour;
+}
+a.animated-button.thar-four:hover:before {
+	right: 0%;
+	left: auto;
+	width: 100%;
+}
+a.animated-button.thar-four:before {
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 0px;
+	z-index: -1;
+	content: '';
+	color: #000 !important;
+	background: #F7CA18;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1)0s;
 }
