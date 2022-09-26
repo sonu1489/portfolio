@@ -3,26 +3,28 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Project from "../components/Project";
-
-
+import Slider from "../components/Slider";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Home() {
-
   return (
     <>
-      <div className="">
-     
+      
         <Navbar />
         <Header id="header" />
-        <div className="dark:bg-slate-900">
-        <About id="about"  />
-        </div>
-        <div className="dark:bg-slate-900 dark:text-gray-100 dark:py-4">
-
+        <About id="about" />
         <Project id="project" />
-        </div>
+        <Slider />
         <Footer />
-      </div>
+      
     </>
   );
+}
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+      // Will be passed to the page component as props
+    },
+  };
 }
